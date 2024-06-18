@@ -4,6 +4,10 @@
   background: #1E2326;
 }
 
+#workspaces {
+  padding-right: 15px;
+}
+
 #workspaces button {
   border: none;
   color: #7A8478;
@@ -15,6 +19,10 @@
 
 #workspaces button.urgent {
   color: #E67E80;
+}
+
+#workspaces button.persistent {
+  color: #2D353B;
 }
 
 #mode {
