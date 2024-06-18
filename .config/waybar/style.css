@@ -1,0 +1,47 @@
+*{
+  font-family: InconsolataNerdFont;
+  font-size: 20px;
+  background: #1E2326;
+}
+
+#workspaces button {
+  border: none;
+  color: #7A8478;
+}
+
+#workspaces button.focused {
+  color: #D3C6AA;
+}
+
+#workspaces button.urgent {
+  color: #E67E80;
+}
+
+#mode {
+  color: #E67E80;
+}
+
+#window {
+  color: #D3C6AA;
+}
+
+#clock {
+  color: #D3C6AA;
+  background: #272E33;
+  padding-right: 15px; 
+  padding-left: 15px;
+}
+
+#wireplumber {
+  color: #D3C6AA;
+  background: #272E33;
+  padding-right: 15px; 
+  padding-left: 15px;
+}
+
+#wireplumber.muted {
+  color: #D3C6AA;
+}
+
+#tray {
+}
