@@ -32,6 +32,30 @@
   padding-left: 15px;
 }
 
+#memory {
+  color: #D3C6AA;
+  background: #2E383C;
+  padding-right: 5px;
+  padding-left: 5px;
+
+}
+
+#cpu {
+  color: #D3C6AA;
+  background: #2E383C;
+  padding-right: 15px;
+  padding-left: 5px;
+
+}
+
+#disk {
+  color: #D3C6AA;
+  background: #2E383C;
+  padding-right: 5px;
+  padding-left: 15px;
+
+}
+
 #wireplumber {
   color: #D3C6AA;
   background: #272E33;
@@ -44,4 +68,6 @@
 }
 
 #tray {
+  padding-right: 15px;
+  padding-left: 15px;
 }

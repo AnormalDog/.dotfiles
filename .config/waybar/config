@@ -4,8 +4,7 @@
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
   "modules-center": ["clock"],
-  "modules-right": ["tray","wireplumber"],
-  "spacing": 10,
+  "modules-right": ["tray","disk","memory","cpu","wireplumber"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -62,4 +61,7 @@
     "spacing": 10,
   },
 
+  "disk": {
+    "format": "DISK: {percentage_used}%"
+  },
 }

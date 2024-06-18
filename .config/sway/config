@@ -77,13 +77,15 @@ input "6940:7024:Corsair_CORSAIR_M55_RGB_PRO_Gaming_Mouse" {
     # Take screenshot
     bindsym $mod+p exec grim
 
-  # Sound:
+    # Sound
     bindsym XF86AudioRaiseVolume exec pamixer -i 5
     bindsym XF86AudioLowerVolume exec pamixer -d 5
     bindsym XF86AudioMute        exec pamixer -t
 
-  # Moving around:
-  
+    # Swaync control center
+    bindsym $mod+Shift+n exec swaync-client -t -sw
+
+    # Moving around  
     bindsym $mod+Prior workspace prev 
     bindsym $mod+Next workspace next
 
@@ -166,7 +168,7 @@ gaps outer 5
 
 
 # class                 border    backgr.   text    indicator   child_border
-client.focused          $blue     $none     $none   $blue       $green
+client.focused          $none     $none     $none   $blue       $green
 client.unfocused        $none     $none     $none   $bg_blue    $bg_green
 client.urgent           $none     $none     $none   $bg_red     $red
 
@@ -196,6 +198,8 @@ assign [app_id="org.telegram.desktop"] 6
     gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
   }
 
-  # xwayland
+  # Xwayland
   xwayland enable
 
+  # Notifications
+  exec swaync
