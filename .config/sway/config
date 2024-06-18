@@ -166,7 +166,7 @@ gaps outer 5
 
 
 # class                 border    backgr.   text    indicator   child_border
-client.focused          $none     $none     $none   $blue       $green
+client.focused          $blue     $none     $none   $blue       $green
 client.unfocused        $none     $none     $none   $bg_blue    $bg_green
 client.urgent           $none     $none     $none   $bg_red     $red
 
