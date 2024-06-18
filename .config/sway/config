@@ -1,0 +1,201 @@
+include ~/.config/sway/colors 
+include /etc/sway/config.d/*
+
+### VARIABLES
+
+  # Logo key. Use Mod1 for Alt.
+  set $mod Mod4
+
+  # Home row direction keys, like vim
+  set $left Left
+  set $down Down
+  set $up Up
+  set $right Right
+
+  # Your preferred terminal emulator
+  set $term alacritty
+
+  # Application launcher
+  set $menu fuzzel
+
+  # Workspaces
+  set $ws1 workspace 1
+  set $ws2 workspace 2
+  set $ws3 workspace 3
+  set $ws4 workspace 4
+  set $ws5 workspace 5
+  set $ws6 workspace 6
+
+### OUTPUT
+
+output * bg ~/Imágenes/wallpapers/nakai-sin-logo.png fill
+output DP-1 resolution 1920x1080@144.001Hz 
+
+### IDLE
+  exec swayidle -w \
+    timeout 1800 'swaymsg "output * power off"'\
+    resume 'swaymsg "output * power on"'
+
+### INPUT
+
+# Wired
+input "1452:591:hfd.cn_USB_DEVICE" {
+  xkb_layout us
+  xkb_variant altgr-intl
+}
+
+# Wireless
+input "1452:591:USB_Dongle" {
+  xkb_layout us
+  xkb_variant altgr-intl
+}
+
+input "6940:7024:Corsair_CORSAIR_M55_RGB_PRO_Gaming_Mouse" {
+
+}
+
+
+### KEY BINDING
+
+  # Basics:
+
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+
+    # floating modifier
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Take screenshot
+    bindsym $mod+p exec grim
+
+  # Sound:
+    bindsym XF86AudioRaiseVolume exec pamixer -i 5
+    bindsym XF86AudioLowerVolume exec pamixer -d 5
+    bindsym XF86AudioMute        exec pamixer -t
+
+  # Moving around:
+  
+    bindsym $mod+Prior workspace prev 
+    bindsym $mod+Next workspace next
+
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+
+  # Workspaces:
+
+    # Switch to workspace
+    bindsym $mod+1 $ws1
+    bindsym $mod+2 $ws2
+    bindsym $mod+3 $ws3
+    bindsym $mod+4 $ws4
+    bindsym $mod+5 $ws5
+    bindsym $mod+6 $ws6
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to $ws1
+    bindsym $mod+Shift+2 move container to $ws2
+    bindsym $mod+Shift+3 move container to $ws3
+    bindsym $mod+Shift+4 move container to $ws4
+    bindsym $mod+Shift+5 move container to $ws5
+    bindsym $mod+Shift+6 move container to $ws6
+
+  # Layout stuff:
+
+    # Where children spawn
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Togle split
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+
+  # Scratchpad:
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    bindsym $mod+minus scratchpad show
+
+### MODES
+
+# Resizing containers:
+mode "resize" {
+    bindsym $left resize shrink width 20px
+    bindsym $down resize grow height  20px
+    bindsym $up resize shrink height  20px
+    bindsym $right resize grow width  20px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### STYLE
+default_border pixel 3
+default_floating_border pixel 3
+gaps inner 10
+gaps outer 5
+
+
+# class                 border    backgr.   text    indicator   child_border
+client.focused          $none     $none     $none   $blue       $green
+client.unfocused        $none     $none     $none   $bg_blue    $bg_green
+client.urgent           $none     $none     $none   $bg_red     $red
+
+### STATUS BAR
+bar {
+  swaybar_command waybar
+}
+
+### RULES
+for_window [class=steam] floating enable
+
+assign [class="discord"] 5
+assign [app_id="org.telegram.desktop"] 6
+
+### OTHERS
+
+  # Clipboard manager
+  exec wl-paste -t text --watch gpaste-client add
+
+  # Autostart
+  exec "dex -a"
+
+  # GTK
+  exec {
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+  }
+
+  # xwayland
+  xwayland enable
+
