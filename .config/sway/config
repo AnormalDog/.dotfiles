@@ -1,4 +1,4 @@
-include ~/.config/sway/colors 
+include ~/.config/sway/macchiato.colors 
 include /etc/sway/config.d/*
 
 ### VARIABLES
@@ -30,7 +30,7 @@ include /etc/sway/config.d/*
 
 ### OUTPUT
 
-output * bg ~/Imágenes/wallpapers/nakai-sin-logo.png fill
+output * bg ~/.config/sway/mitzizune.png fill
 output DP-1 resolution 1920x1080@144.001Hz 
 
 ### IDLE
@@ -177,9 +177,14 @@ gaps outer 5
 
 
 # class                 border    backgr.   text    indicator   child_border
-client.focused          $none     $none     $none   $blue       $green
-client.unfocused        $none     $none     $none   $bg_blue    $bg_green
-client.urgent           $none     $none     $none   $bg_red     $red
+client.focused          $none     $none     $none   $blue       $text
+client.unfocused        $none     $none     $none   $blue       $surface0
+client.urgent           $none     $none     $none   $blue       $pink
+
+# class                 border    backgr.   text    indicator   child_border
+#client.focused          $none     $none     $none   $blue       $green
+#client.unfocused        $none     $none     $none   $bg_blue    $bg_green
+#client.urgent           $none     $none     $none   $bg_red     $red
 
 ### STATUS BAR
 bar {
@@ -195,7 +200,7 @@ assign [app_id="org.telegram.desktop"] 6
 ### OTHERS
 
   # Clipboard manager
-  exec wl-paste -t text --watch gpaste-client add
+  exec wl-paste --watch gpaste-client add
 
   # Autostart
   exec "dex -a"

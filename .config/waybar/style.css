@@ -1,20 +1,45 @@
 *{
   font-family: InconsolataNerdFont;
   font-size: 20px;
-  background: #1E2326;
+}
+
+.modules-left {
+ /*       top    right  bottom left*/
+  margin: 3px    5px    3px    0px;
+}
+
+.modules-center {
+ /*       top    right  bottom left*/
+  margin: 3px    5px    3px    5px;
+}
+
+.modules-right {
+ /*       top    right  bottom left*/
+  margin: 3px    0px    3px    5px;
+}
+
+window#waybar {
+  padding: 0 5 0 5;
+  border-radius: 20px;
+  /*background: #24273a;*/
+  background : transparent;
 }
 
 #workspaces {
-  padding-right: 15px;
+  background: #363a4f; 
+  border-radius: 20px;
+  padding: 5 5 5 5;
 }
 
 #workspaces button {
   border: none;
-  color: #7A8478;
+  color: #5b6078;
+  padding: 0 20 0 10;
+
 }
 
 #workspaces button.focused {
-  color: #D3C6AA;
+  color: #cad3f5;
 }
 
 #workspaces button.urgent {
@@ -22,61 +47,74 @@
 }
 
 #workspaces button.persistent {
-  color: #2D353B;
+  color: #1e2030;
+
+}
+
+#workspaces button:hover {
+  color: #f5a97f;
+  background: transparent;
 }
 
 #mode {
-  color: #E67E80;
+  color: #f5bde6;
 }
 
 #window {
-  color: #D3C6AA;
+  color: #cad3f5;
   padding-right: 15px;
 }
 
 #clock {
-  color: #D3C6AA;
-  background: #272E33;
-  padding-right: 15px; 
-  padding-left: 15px;
-}
-
-#memory {
-  color: #D3C6AA;
-  background: #2E383C;
-  padding-right: 5px;
-  padding-left: 5px;
-
-}
-
-#cpu {
-  color: #D3C6AA;
-  background: #2E383C;
-  padding-right: 15px;
-  padding-left: 5px;
-
+  color: #cad3f5;
+  background: #363a4f; 
+  border-radius: 20px;
+  padding: 0 10 0 10;
 }
 
 #disk {
-  color: #D3C6AA;
-  background: #2E383C;
+  color: #cad3f5;
+  background: #363a4f; 
   padding-right: 5px;
   padding-left: 15px;
-
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
+#memory {
+  color: #cad3f5;
+  background: #363a4f; 
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#cpu {
+  color: #cad3f5;
+  background: #363a4f; 
+  padding-right: 15px;
+  padding-left: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+
 #wireplumber {
-  color: #D3C6AA;
-  background: #272E33;
-  padding-right: 15px; 
+  color: #cad3f5;
+  background: #363a4f; 
+  padding-right: 17px; 
   padding-left: 15px;
+  border-radius: 20px;
+  margin-left: 10px;
 }
 
 #wireplumber.muted {
-  color: #D3C6AA;
+  color: #cad3f5;
 }
 
 #tray {
+  background: #363a4f; 
+  border-radius: 20px;
   padding-right: 15px;
   padding-left: 15px;
+  margin-right: 10px;
 }
