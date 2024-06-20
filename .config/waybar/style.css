@@ -57,7 +57,12 @@ window#waybar {
 }
 
 #mode {
+  background: #363a4f;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   color: #f5bde6;
+  margin-left: 10px;
 }
 
 #window {
