@@ -77,6 +77,16 @@ window#waybar {
   padding: 0 10 0 10;
 }
 
+#gamemode {
+  color: white;
+  background: #363a4f;
+  border-radius: 20px;
+  padding: 0 6 0 10;
+  margin-right: 10px;
+
+
+}
+
 #disk {
   color: #cad3f5;
   background: #363a4f; 

@@ -8,7 +8,7 @@
   "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["clock"],
-  "modules-right": ["tray","disk","memory","cpu","wireplumber"],
+  "modules-right": ["gamemode","tray","disk","memory","cpu","wireplumber"],
 
   "sway/workspaces": {
     "disable-scroll": true,
@@ -41,7 +41,7 @@
   },
 
   "clock": {
-    "format": "{:%a, %d  %b  %H:%M}"
+    "format": "{:%a, %d  %b  %H:%M}",
   },
 
   "gamemode": {
@@ -49,14 +49,18 @@
 
   },
 
+  "disk": {
+    "format": "Disk: {percentage_used}%"
+  },
+
   "memory": {
     "interval": 30,
-    "format": "MEM: {percentage}%",
+    "format": "Mem: {percentage}%",
   },
 
   "cpu": {
     "interval": 10,
-    "format": "CPU: {usage}%",
+    "format": "Cpu: {usage}%",
   },
 
   "wireplumber": {
@@ -70,9 +74,5 @@
   "tray": {
     "icon-size": 21,
     "spacing": 10,
-  },
-
-  "disk": {
-    "format": "DISK: {percentage_used}%"
   },
 }
