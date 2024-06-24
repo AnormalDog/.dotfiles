@@ -19,6 +19,9 @@ include /etc/sway/config.d/*
   # Application launcher
   set $menu fuzzel
 
+  # File manager 
+  set $files ranger
+
   # Workspaces
   set $ws1 workspace 1
   set $ws2 workspace 2
@@ -63,7 +66,8 @@ exec swayidle -w \
     # Take screenshot
     bindsym $mod+p exec grim
 
-    # Turn off the screen
+    # Open file manager
+    bindsym $mod+Shift+d exec '$term -e "$files"'
 
     # Sound
     bindsym XF86AudioRaiseVolume exec pamixer -i 5
