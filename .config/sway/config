@@ -1,4 +1,5 @@
 include ~/.config/sway/macchiato.colors 
+include ~/.config/sway/input.config
 include /etc/sway/config.d/*
 
 ### VARIABLES
@@ -30,31 +31,14 @@ include /etc/sway/config.d/*
 
 ### OUTPUT
 
-output * bg ~/.config/sway/arch-black-4k.png fill
+output * bg ~/.config/sway/wallpapers/arch-black-4k.png fill
 output DP-1 resolution 1920x1080@144.001Hz 
 
 ### IDLE
-#exec swayidle -w \
-#  timeout 600 'swaymsg "output * power off"'\
-#  resume 'swaymsg "output * power on"'
-
-### INPUT
-
-# Wired
-input "1452:591:hfd.cn_USB_DEVICE" {
-  xkb_layout us
-  xkb_variant altgr-intl
-}
-
-# Wireless
-input "1452:591:USB_Dongle" {
-  xkb_layout us
-  xkb_variant altgr-intl
-}
-
-input "6940:7024:Corsair_CORSAIR_M55_RGB_PRO_Gaming_Mouse" {
-  pointer_accel -0.6
-}
+exec swayidle -w \
+  timeout 595 'swaylock -f'\
+  timeout 600 'swaymsg "output * power off"'\
+  resume 'swaymsg "output * power on"'
 
 
 ### KEY BINDING
